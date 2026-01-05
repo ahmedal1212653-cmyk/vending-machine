@@ -26,3 +26,4 @@ if choice in products:
         print("Insufficient balance. Transaction cancelled.")
 else:
     print("Invalid selection.")
+
