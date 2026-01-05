@@ -1,0 +1,28 @@
+# Vending Machine Program
+products = {
+    22: {"name": "cola", "price": 2.5},
+    23: {"name": "coffe", "price": 4},
+    33: {"name": "Chips", "price": 2},
+    44: {"name": "Chocolate", "price": 7}
+}
+
+print("Welcome to the Vending Machine")
+print("------------------------------")
+
+for key, value in products.items():
+    print(f"{key}. {value['name']} - {value['price']} SAR")
+
+choice = int(input("Select a product number: "))
+
+if choice in products:
+    money = float(input("Insert money (SAR): "))
+    price = products[choice]["price"]
+
+    if money >= price:
+        change = money - price
+        print(f"Please take your {products[choice]['name']}")
+        print(f"Change: {change} SAR")
+    else:
+        print("Insufficient balance. Transaction cancelled.")
+else:
+    print("Invalid selection.")
